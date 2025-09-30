@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Employee Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'insert.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-title">Fill Details to Insert Data</h2>
+        <form method="POST" id="employeeForm" autocomplete="off" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="emp_id">Employee ID</label>
+                <input type="text" id="emp_id" name="emp_id" placeholder="EMP266043" required>
+                <span class="error-message" id="empIdError"></span>
+                {% if form.emp_id.errors %}<span class="error-message">{{ form.emp_id.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="form-group">
+                <label for="emp_name">Employee Name</label>
+                <input type="text" id="emp_name" name="emp_name" placeholder="John Doe" required>
+                <span class="error-message" id="empNameError"></span>
+                {% if form.emp_name.errors %}<span class="error-message">{{ form.emp_name.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="form-group">
+                <label for="emp_salary">Employee Salary (₹)</label>
+                <input type="number" id="emp_salary" name="emp_sal" min="10000" max="800000" placeholder="50000" required>
+                <span class="error-message" id="empSalaryError"></span>
+                {% if form.emp_sal.errors %}<span class="error-message">{{ form.emp_sal.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="form-group">
+                <label for="emp_city">Employee City</label>
+                <input type="text" id="emp_city" name="emp_addr" placeholder="Bengaluru" required>
+                <span class="error-message" id="empCityError"></span>
+                {% if form.emp_addr.errors %}<span class="error-message">{{ form.emp_addr.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Submit</button>
+                <a class="back-btn" href="/">Go Back</a>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'insert.js' %}"></script>
+</body>
+</html>

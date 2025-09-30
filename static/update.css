@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f6f8fb;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.09);
+    width: 430px;
+    max-width: 98vw;
+    margin: 2rem auto;
+}
+
+.form-title {
+    text-align: center;
+    color: #2a354f;
+    margin-bottom: 2.2rem;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+form p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+label {
+    font-size: 1.03rem;
+    color: #16325c;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 7px;
+    border: 1px solid #e2e8f0;
+    background: #fafbfc;
+    color: #1a2340;
+    transition: border 0.2s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #23c37a;
+    background: #f4fff7;
+}
+
+.submit-btn {
+    margin-top: 0.8rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.07rem;
+    background: #23c37a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(35,195,122,0.08);
+    transition: background 0.18s;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    background: #169456;
+}
+
+/* Validation error styles for Django */
+.errorlist {
+    color: #df4747;
+    font-size: 0.98rem;
+    margin: 0.2rem 0 0.5rem 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Responsive: small screens */
+@media (max-width: 580px) {
+    .container {
+        padding: 0.7rem 0.6rem;
+        width: 99vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .form-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .submit-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.7rem 0;
+    }
+}

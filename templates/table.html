@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee's List</title>
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+</head>
+<body>
+    <div class="table-container">
+        <h2>Employee's List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Residence City</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.emp_id }}</td>
+                    <td>{{ employee.emp_name }}</td>
+                    <td>{{ employee.emp_sal }}</td>
+                    <td>{{ employee.emp_addr }}</td>
+                    <td>
+                        <a href="/update/{{employee.id}}" class="btn update-btn">Update</a>
+                        <a href="/delete/{{employee.id}}" class="btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="insert-btn-center">
+            <a class="btn update-btn" href="/insert/">Insert Data</a>
+        </div>
+    </div>
+</body>
+</html>
