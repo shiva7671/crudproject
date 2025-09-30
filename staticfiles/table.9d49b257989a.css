@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f6f8fb;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.table-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
+    width: 950px;
+    max-width: 98vw;
+    margin: 2rem auto;
+}
+
+h2 {
+    text-align: center;
+    color: #2a354f;
+    margin-bottom: 2.2rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fafbfc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: #eff4f9;
+    color: #16325c;
+    font-size: 1.15rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+    font-size: 1rem;
+    color: #233366;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.btn {
+    padding: 0.6rem 1.35rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    margin-right: 0.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.update-btn {
+    background-color: #23c37a;
+    color: #fff;
+}
+
+.update-btn:hover, .update-btn:focus {
+    background-color: #169456;
+}
+
+.delete-btn {
+    background-color: #df4747;
+    color: #fff;
+}
+
+.delete-btn:hover, .delete-btn:focus {
+    background-color: #ad2020;
+}
+
+@media (max-width: 700px) {
+    .table-container {
+        padding: 0.7rem;
+        width: 100vw;
+        border-radius: 0;
+    }
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        margin-bottom: 1.2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        background: #f5f7fa;
+        padding: 1rem 0.5rem;
+    }
+    td {
+        padding: 0.6rem;
+        text-align: right;
+        border-bottom: none;
+        position: relative;
+    }
+    td::before {
+        content: attr(data-label);
+        float: left;
+        text-align: left;
+        font-weight: bold;
+        color: #6a6a6a;
+    }
+    .btn {
+        margin-top: 0.6rem;
+        margin-right: 0.3rem;
+        width: 48%;
+    }
+}
+
+.insert-btn-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+.insert-btn-center .btn {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .insert-btn-center {
+        justify-content: center;
+    }
+    .insert-btn-center .btn {
+        width: 70%;
+    }
+}
+
+
