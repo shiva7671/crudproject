@@ -118,9 +118,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[STATIC_DIR]
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 # Render.com: Collect static on build
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
